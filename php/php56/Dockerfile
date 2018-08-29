@@ -30,6 +30,9 @@ RUN apt-get update \
     && apt-get install -y libbz2-dev \
     && docker-php-ext-install bz2 \
     && :\
+    && apt-get install -y libmcrypt-dev \
+    && docker-php-ext-install mcrypt \
+    && :\
     && docker-php-ext-install zip \
     && docker-php-ext-install pcntl \
     && docker-php-ext-install pdo_mysql \
