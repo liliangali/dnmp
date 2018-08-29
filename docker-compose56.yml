@@ -3,8 +3,8 @@ services:
   nginx:
     image: nginx:alpine
     ports:
-      - "80:80"
-      - "443:443"
+      - "81:80"
+      - "444:443"
     volumes:
       - ./www/:/var/www/html/:rw
       - ./conf/conf.d:/etc/nginx/conf.d/:ro
@@ -30,7 +30,7 @@ services:
   mysql:
     image: mysql:8.0
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - ./conf/mysql.cnf:/etc/mysql/conf.d/mysql.cnf:ro
       - ./mysql/:/var/lib/mysql/:rw
@@ -44,7 +44,7 @@ services:
     networks:
       - net-redis
     ports:
-      - "6379:6379"
+      - "6380:6379"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
